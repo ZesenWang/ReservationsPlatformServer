@@ -1,8 +1,12 @@
 package com.jason.utils;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -30,6 +34,7 @@ public class JSONResolver {
 				sb.append(buffer);
 			}
 			object = new JSONObject(sb.toString());
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

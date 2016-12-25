@@ -28,8 +28,20 @@ public class ReserveServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method
+		//System.out.println(request.getHeader("user-agent"));
+		String userAgent = request.getHeader("user-agent");
+		if(userAgent.startsWith("Dalvik"))
+			doGetFromApp(request, response);
+		else
+			doGetFromWebsite(request, response);
+	}
+	private void doGetFromWebsite(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+	}
+
+	private void doGetFromApp(HttpServletRequest request, HttpServletResponse response){
 		JSONResolver resolver = new JSONResolver(request, response);
 		JSONObject data = resolver.getJSONObeject();
 		System.out.println(data.toString(2));
@@ -47,7 +59,6 @@ public class ReserveServlet extends HttpServlet {
 		
 		resolver.sendJSONObject(returnData);
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

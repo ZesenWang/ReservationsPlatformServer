@@ -33,6 +33,19 @@ public class SignUpServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		String userAgent = request.getHeader("user-agent");
+		System.out.println(userAgent);
+		if(userAgent.startsWith("Dalvik"))
+			doGetFromApp(request, response);
+		else
+			doGetFromWebsite(request, response);
+	}
+	private void doGetFromWebsite(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		System.out.println("doGetFromWebsite has invoked");
+	}
+
+	private void doGetFromApp(HttpServletRequest request, HttpServletResponse response){
 		JSONResolver resolver = new JSONResolver(request, response);
 		JSONObject data = resolver.getJSONObeject();
 		System.out.println(data.toString(2));

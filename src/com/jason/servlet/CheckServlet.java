@@ -30,12 +30,33 @@ public class CheckServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		String userAgent = request.getHeader("user-agent");
+		if(userAgent.startsWith("Dalvik"))
+			doGetFromApp(request, response);
+		else
+			doGetFromWebsite(request, response);
+	}
+
+	private void doGetFromWebsite(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void doGetFromApp(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
 		JSONResolver resolver = new JSONResolver(request, response);
 		JSONObject data = resolver.getJSONObeject();
 		System.out.println(data.toString(2));
 		
+		String id = data.getString("id");
+		boolean isCancel = data.getBoolean("isCancel");
+		
+		
 		JSONObject returnData = new JSONObject();
-		returnData.put("queueNumber", 1);
+		if(isCancel)
+			returnData.put("queueNumber", -1);
+		else
+			returnData.put("queueNumber", 1);
 		returnData.put("waitTime", 0);
 		returnData.put("peopleNumber", 0);
 		
