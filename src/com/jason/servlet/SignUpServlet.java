@@ -12,13 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 
 import com.jason.utils.JSONResolver;
+import com.jason.utils.TempDatabaseConnector;
 
 /**
  * Servlet implementation class SignUpServlet
  */
 public class SignUpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    TempDatabaseConnector connector = new TempDatabaseConnector(); 
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -50,6 +51,14 @@ public class SignUpServlet extends HttpServlet {
 		String id= request.getParameter("sId");
 		String insuranceId= request.getParameter("sInsuranceId");
 		String insuranceCode= request.getParameter("insuranceCode");
+		
+		connector.writeSignUpInformation(name, "null", genderCode, id, insuranceId, insuranceCode);
+		try {
+			response.sendRedirect("main2.jsp?isSucceed=true");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private void doGetFromApp(HttpServletRequest request, HttpServletResponse response){
@@ -62,7 +71,8 @@ public class SignUpServlet extends HttpServlet {
 		int genderCode = data.getInt("genderCode");
 		String id = data.getString("sId");
 		String insuranceId = data.getString("sInsuranceId");
-		String insuranceCode = data.getString("insuranceCode");
+		
+		connector.writeSignUpInformation(name, password, Integer.toString(genderCode), id, insuranceId, insuranceCode);
 		
 		JSONObject returnData = new JSONObject();
 		returnData.put("isSucceed", true);

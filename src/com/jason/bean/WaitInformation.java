@@ -5,7 +5,7 @@ public class WaitInformation {
 	public int waitTime;
 	public int peopleCount;
 	
-	public boolean isSucceed() {
+	public boolean getSucceed() {
 		return isSucceed;
 	}
 	public void setSucceed(boolean isSucceed) {
@@ -23,5 +23,5 @@ public class WaitInformation {
 	public void setPeopleCount(int peopleCount) {
 		this.peopleCount = peopleCount;
 	}
-	
 }
+	

@@ -1,0 +1,238 @@
+ #dlgReply 
+{ 
+/*display: table-cell; 
+text-align: center;*/ 
+vertical-align: middle; 
+}  
+#text-style{
+	text-align: center;
+	
+}
+#mydiv{
+	width:600px;
+	height:300px;
+	margin-left:-300px;
+	margin-top:-110px;
+	
+}
+#outdiv{
+	width:0;
+	height:0;
+	position:fixed;
+	left:50%;
+	rigth:50%;
+	top:50%;
+	bottom:50%;
+}
+#medicine_index{
+	background-image:url(../images/1.jpg);
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+#head_text-style{
+	height:50px;
+	text-align:center;
+	font-weight:bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#user{
+	width:400px;
+	height:200px;
+	margin-left:80px;
+	margin-top:20px;
+	
+}
+#touxiang{
+	width:200px;
+	height:200px;
+	float:left;
+	background-color:blue;
+}
+#info{
+	width:200px;
+	height:200px;
+	float:left;
+}
+p{
+	text-align:center;
+}
+#p_t{
+	padding-top:15px;
+	padding-left:15px;
+	text-align:left;
+	color:#3232cd;
+}
+#touxiang_img{
+	width:200px;
+	height:200px;
+}
+h1{
+	padding-left:20px;
+}
+#search_box{
+	border:1px solid #000;
+	position:absolute;
+	clear:both;
+	left:50%;
+	right:50%;
+	top:50%;
+	
+	height:100px;
+	margin-top:-50px;
+	margin-left:-300px;
+	width:600px;
+	
+}
+#search_p{
+	float:left;
+	padding:10px 10px 10px 10px;
+	margin:0px 0px 0px 0px;
+	width: 50%;
+	height:100px;
+	font-size:30px;
+	line-height:80px;
+}
+#search_button{
+	margin:10px 10px 10px 10px;
+	float:left;
+	padding:10px 10px 10px 10px;
+	margin:0px 0px 0px 0px;
+	width:50%;
+	height:100px;
+}
+#form{
+	padding:10px 10px 10px 10px;
+}
+#select{
+	
+	height:50px;
+}
+#submitButton{
+	width:90px;
+	height:50px;
+	margin-left:20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#stock_info{
+	width: 90%;
+    left: 5%;
+    position: absolute;
+    font-size: 20px;
+    color: #252020;
+    top:20%;
+}
+#head_title{
+	font-size:25px;
+}
+
+
+
+
+
+
+
+
+
+#extract_table{
+	position:relative;
+	left:15%;
+	top:50%;
+	width:70%;
+	text-align:cente;
+	
+}
+.input_EO{
+	float:right;
+}
+#input_td{
+	padding-top:10px;
+	padding-right:10%;
+	padding-button:10px;
+	padding-left:10px;
+	
+	font-size:20px;
+}
+#input_button{
+	height:100px;
+	padding-top:40px;
+	text-align:center;
+}
+
+#submit_info{
+	display:none;
+	font-size:25px;
+	height:150px;
+	padding-top:20px;
+	padding-bottom:20px;
+	width:70%;
+	margin-left:15%;
+	font-weight:bold;
+}
+#submit_button{
+	text-align:center;
+	display:none;
+}
+
+
+
+
+.outButtom{
+	color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a; 
+    border-radius: 4px;
+    font-size: 25px;
+    width: 300px;
+    margin-top: 25px;
+}
+
+
+
+
+#table_e-s_info{
+	width:80%;
+	margin-left:10%;
+	font-size:20px;
+}
