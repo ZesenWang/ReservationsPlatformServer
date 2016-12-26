@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
 
+import com.jason.bean.WaitInformation;
 import com.jason.utils.JSONResolver;
 
 /**
@@ -38,6 +39,11 @@ public class ReserveServlet extends HttpServlet {
 	}
 	private void doGetFromWebsite(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
+		WaitInformation info = new WaitInformation();
+		info.setPeopleCount(0);
+		info.setSucceed(true);
+		info.setWaitTime(0);
+		
 		
 	}
 

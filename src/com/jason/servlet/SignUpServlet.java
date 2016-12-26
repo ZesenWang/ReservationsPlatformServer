@@ -43,6 +43,13 @@ public class SignUpServlet extends HttpServlet {
 	private void doGetFromWebsite(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		System.out.println("doGetFromWebsite has invoked");
+		
+		String name = request.getParameter("sName");
+		String password= request.getParameter("sPassword");
+		String genderCode= request.getParameter("genderCode");
+		String id= request.getParameter("sId");
+		String insuranceId= request.getParameter("sInsuranceId");
+		String insuranceCode= request.getParameter("insuranceCode");
 	}
 
 	private void doGetFromApp(HttpServletRequest request, HttpServletResponse response){
