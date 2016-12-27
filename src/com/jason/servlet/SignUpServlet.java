@@ -71,6 +71,7 @@ public class SignUpServlet extends HttpServlet {
 		int genderCode = data.getInt("genderCode");
 		String id = data.getString("sId");
 		String insuranceId = data.getString("sInsuranceId");
+		String insuranceCode = data.getString("insuranceCode");
 		
 		connector.writeSignUpInformation(name, password, Integer.toString(genderCode), id, insuranceId, insuranceCode);
 		

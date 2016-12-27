@@ -54,16 +54,18 @@ public class CheckServlet extends HttpServlet {
 			returnData.put("queueNumber", -1);
 			//这里的值填什么都无所谓
 			returnData.put("waitTime", 0);
-			returnData.put("peopleNumber", 0);
+			returnData.put("peopleCount", 0);
 		}else{
 			Vector vector = connector.queryReservationInformation(id);
 			//可能门诊诊间还没有生成排队信息，如果是这样就先默认几个值
 			if(vector == null){
+				returnData.put("queueNumber", 0);
 				returnData.put("waitTime", 0);
 				returnData.put("peopleCount", 0);
 			}else{
 				int peopleCount = (Integer)vector.get(0);
 				//因为门诊诊间没有提供预计等待时间的功能，所以这里我们假设等待时间是病人数*5
+				returnData.put("queueNumber", vector.get(1));
 				returnData.put("waitTime", peopleCount * 5);
 				returnData.put("peopleCount", peopleCount);
 			}

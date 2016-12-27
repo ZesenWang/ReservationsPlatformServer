@@ -26,7 +26,7 @@ public class TempDatabaseConnector {
 		return true;
 	}
 	public boolean deleteReservationInformation(String PID){
-		String sql = "DELETE FROM exLine WHERE PID="+PID;
+		String sql = "DELETE FROM exLine WHERE PID = '"+PID+"'";
 		executeSQL(sql);
 		return true;
 	}
